@@ -31,15 +31,15 @@ The complete pipeline includes video preprocessing, face extraction, frequency t
 
 ```mermaid
 flowchart TD
-    A[FaceForensics++ Dataset] --> B[Video Collection]
-    B --> C[Random Frame Extraction]
-    C --> D[Face Detection - MTCNN]
-    D --> E[Face Cropping & Resizing]
-    E --> F[Fast Fourier Transform - FFT]
-    F --> G[Dual CNN Feature Extraction]
-    G --> H[Feature Fusion]
-    H --> I[Fully Connected Classifier]
-    I --> J[Real / Deepfake Prediction]
+    A["FaceForensics++ Dataset"] --> B["Video Collection"]
+    B --> C["Random Frame Extraction"]
+    C --> D["Face Detection (MTCNN)"]
+    D --> E["Face Cropping and Resizing"]
+    E --> F["Fast Fourier Transform (FFT)"]
+    F --> G["Dual CNN Feature Extraction"]
+    G --> H["Feature Fusion"]
+    H --> I["Fully Connected Classifier"]
+    I --> J["Real or Deepfake Prediction"]
 
     style A fill:#4C6EF5,color:#fff,stroke:#333
     style B fill:#5C7CFA,color:#fff,stroke:#333
@@ -59,16 +59,16 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A[FaceForensics++ Dataset] --> B[Random Frame Extraction]
-    B --> C[Face Detection - MTCNN]
-    C --> D[RGB Face Image]
-    C --> E[FFT Image]
-    D --> F["MobileNetV3 Small<br/>(Spatial Feature Learning)"]
-    E --> G["MobileNetV3 Small<br/>(Frequency Feature Learning)"]
-    F --> H[Feature Concatenation]
+    A["FaceForensics++ Dataset"] --> B["Random Frame Extraction"]
+    B --> C["Face Detection (MTCNN)"]
+    C --> D["RGB Face Image"]
+    C --> E["FFT Image"]
+    D --> F["MobileNetV3 Small (Spatial Feature Learning)"]
+    E --> G["MobileNetV3 Small (Frequency Feature Learning)"]
+    F --> H["Feature Concatenation"]
     G --> H
-    H --> I[Fully Connected Classification Head]
-    I --> J[Real / Deepfake Prediction]
+    H --> I["Fully Connected Classification Head"]
+    I --> J["Real or Deepfake Prediction"]
 
     style A fill:#4C6EF5,color:#fff,stroke:#333
     style B fill:#748FFC,color:#fff,stroke:#333
@@ -121,9 +121,9 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A[Spatial Features] --> C[Feature Concatenation]
-    B[Frequency Features] --> C
-    C --> D[Classification Head]
+    A["Spatial Features"] --> C["Feature Concatenation"]
+    B["Frequency Features"] --> C
+    C --> D["Classification Head"]
 
     style A fill:#FF8787,color:#fff,stroke:#333
     style B fill:#FFA94D,color:#fff,stroke:#333
